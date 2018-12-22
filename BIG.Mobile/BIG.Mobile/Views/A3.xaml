@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BIG.Mobile.Views.A3"
+             Title="Uni"
+             Icon="llanta.png">
+    <Grid RowSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <ActivityIndicator Grid.RowSpan="2"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                       IsVisible="False"
+                       IsEnabled="True"
+                       x:Name="syncIndicator"/>
+        <StackLayout Grid.Row="0" BackgroundColor="#5ABAFF" Padding="10,30,10,5">
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition  />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition  />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition  />
+                    <ColumnDefinition />
+
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Text="Codigo" FontAttributes="Bold" HorizontalOptions="Start"/>
+                <Label Grid.Column="1" Text="Descripcion" FontAttributes="Bold" HorizontalOptions="Start"/>
+                <Label Grid.Column="2" Text="Modelo" FontAttributes="Bold" HorizontalOptions="Start"/>
+                <Label Grid.Column="3" Text="Rin" FontAttributes="Bold" HorizontalOptions="Start"/>
+                <Label Grid.Column="4" Text="Linea" FontAttributes="Bold" HorizontalOptions="Start"/>
+                <Label Grid.Column="5" Text="Existencia" FontAttributes="Bold" HorizontalOptions="Start"/>
+                <Label Grid.Column="6" Text="Precio" FontAttributes="Bold" HorizontalOptions="Start"/>
+                <Label Grid.Column="7" Text="Estatus" FontAttributes="Bold" HorizontalOptions="Start"/>
+
+            </Grid>
+        </StackLayout>
+
+        <ListView x:Name="todoList"
+				
+				IsPullToRefreshEnabled="true" Refreshing="OnRefresh"
+				Grid.Row="1">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.ContextActions>
+                            <MenuItem  Text="Complete" CommandParameter="{Binding .}"/>
+                        </ViewCell.ContextActions>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition  Width="*"/>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+
+                            </Grid.ColumnDefinitions>
+
+                            <Label Grid.Column="0"  Text="{Binding Code}" HorizontalTextAlignment="Start"/>
+                            <Label Grid.Column="1" Text="{Binding Description}" HorizontalTextAlignment="Start" />
+                            <Label Grid.Column="2"  Text="{Binding Model}" HorizontalTextAlignment="End"/>
+                            <Label Grid.Column="3"  Text="{Binding Rim}" HorizontalTextAlignment="Start"/>
+                            <Label Grid.Column="4" Text="{Binding Line}" HorizontalTextAlignment="Start" />
+                            <Label Grid.Column="5"  Text="{Binding Stock}" HorizontalTextAlignment="End"/>
+                            <Label Grid.Column="6"  Text="{Binding Price}" HorizontalTextAlignment="Start"/>
+                            <Label Grid.Column="7" Text="{Binding Status}" HorizontalTextAlignment="Start" />
+
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</ContentPage>

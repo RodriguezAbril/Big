@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BIG.Mobile.Views.Comunicados"
+             Title="Comunicados LRG"
+             BackgroundColor="White">
+    <ListView VerticalOptions="FillAndExpand" x:Name="PdfListView" ItemSelected="PdfListView_OnItemSelected" HasUnevenRows="True">
+        <ListView.ItemTemplate>
+            <DataTemplate >
+                <ViewCell>
+                    <StackLayout Orientation="Vertical" >
+                        <Grid BackgroundColor="White"
+                              HeightRequest="10"></Grid>
+                        <StackLayout Orientation="Vertical"
+                                     Padding="20"
+                                     BackgroundColor="#EB974E">
+                            <Label  Text="{Binding FileName}" FontSize="Large" TextColor="White"/>
+                            <Label  Text="{Binding Url}" FontAttributes="Bold" Opacity="0.6" TextColor="White"/>
+                        </StackLayout>
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>

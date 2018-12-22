@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BIG.Mobile.Views.Claves"
+             Title="Claves">
+
+    <Grid RowSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+    
+    <StackLayout Grid.Row="0" >
+        <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+                <Image HorizontalOptions="Start" Source="flat.png"
+                           VerticalOptions="Start"
+                           WidthRequest="95" HeightRequest="95"
+                           Aspect="AspectFill"
+                           x:Name="CircleImageAvaoptar"
+                           />
+                <StackLayout  Grid.Column="1" Padding="10,30,10,5" Orientation="Horizontal" HorizontalOptions="StartAndExpand">
+                    <Label FontSize = "20" TextColor="#2e81b7" x:Name="lblfecha"  Text=""/>
+        </StackLayout>
+        </Grid>
+    </StackLayout>
+        <StackLayout Padding="10,30,10,5"  Grid.Row="1" HorizontalOptions="Start" Orientation="Horizontal" VerticalOptions="Center">
+            <Label FontSize = "20"  TextColor="#2e81b7" Text="            Razón:" 
+            />
+            <Label FontSize = "20" Text="   " 
+            />
+            <Entry  Text="                     "></Entry>
+
+        </StackLayout>
+        <StackLayout  Padding="10,30,10,5"  Grid.Row="2" Orientation="Horizontal" HorizontalOptions="Start" VerticalOptions="Center">
+            <Label FontSize = "20"  TextColor="#2e81b7" Text="          Factura:" 
+            />
+            <Label FontSize = "20" Text="   " 
+            />
+            <Entry  Text="                     "> </Entry>
+
+        </StackLayout>
+        <StackLayout  Grid.Row="3"  Padding="10,30,10,5"  HorizontalOptions="Start" Orientation="Horizontal" VerticalOptions="Center">
+            <Label FontSize = "20"  TextColor="#2e81b7" Text="    La clave es:" 
+            />
+            <Label FontSize = "20" Text="   " 
+            />
+
+            <Label FontSize = "20" Text="{Binding Code}" 
+            />
+
+        </StackLayout>
+        <StackLayout  Grid.Row="4"  Padding="10,30,10,5" HorizontalOptions="Center" VerticalOptions="Center">
+            <Button BackgroundColor="#3a99d9"  TextColor="White" Text="Enviar"></Button>
+
+        </StackLayout>
+    </Grid>
+</ContentPage>

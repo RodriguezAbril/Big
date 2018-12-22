@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BIG.Mobile.Views.Denuncia"
+             Title="Denuncia">
+    <ScrollView>
+        <Grid RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <ActivityIndicator Grid.RowSpan="2"
+                           Color="Pink"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                       IsVisible="False"
+                       IsEnabled="True"
+                       x:Name="syncIndicator"/>
+
+            <StackLayout Spacing="0" Padding="20">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition  Width="*"/>
+                        <ColumnDefinition  Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0"  Text="Seleccione un nombre de la siguiente  lista ">
+                    </Label>
+                    <Image Grid.Column="1" HorizontalOptions="Center" Source="signal.png"
+                           VerticalOptions="Center"
+                           
+                           WidthRequest="40" HeightRequest="40"
+                           Aspect="AspectFill"
+                           x:Name="errorcnt"
+                           IsVisible="False"
+                        
+                           />
+                </Grid>
+
+            </StackLayout>
+
+            <StackLayout  Grid.Row="1" Padding="5">
+                <Picker x:Name="modepicker"  ItemDisplayBinding="{Binding Nombre}"   SelectedItem="{Binding Nombre}" Title="Personal"  >
+
+                </Picker>
+                <Entry x:Name="help" IsVisible="False" >
+
+                </Entry>
+            </StackLayout>
+
+            <StackLayout  Grid.Row="2" Padding="20" VerticalOptions="Center" Orientation="Vertical" HorizontalOptions="Center">
+                <Label Text="A continuación especifique los hechos que originaron la denuncia">
+                </Label>
+                <Editor x:Name="newItemName" Text="" HeightRequest="150" BackgroundColor="#E8E8E8">
+                </Editor>
+                <Label VerticalTextAlignment="Center" Text="{Binding Nombre}"></Label>
+            </StackLayout>
+
+            <StackLayout  Grid.Row="3" Padding="20" HorizontalOptions="Center" Orientation="Horizontal"  >
+                <Switch x:Name="switcher"
+                        IsToggled="False"
+                        Toggled="OnToggled"
+                        ></Switch>
+                <Label Text="Desea que lo podamos contactar?">
+                </Label>
+                <Entry x:Name="newContacto" Keyboard="Email" Placeholder="anonimo@correo.com" IsVisible="False"></Entry>
+            </StackLayout>
+
+            <StackLayout Grid.Row="4" x:Name="buttonsPanel" Spacing="10" Padding="20" >
+                <Button Clicked="OnAdd"  Text="Enviar" WidthRequest="5" MinimumWidthRequest="20" HeightRequest="50" >
+                </Button>
+            </StackLayout>
+
+
+        </Grid>
+    </ScrollView>
+
+</ContentPage>

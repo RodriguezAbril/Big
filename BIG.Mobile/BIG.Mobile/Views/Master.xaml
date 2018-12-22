@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BIG.Mobile.Views.Master"
+             Title="Master"
+             BackgroundColor="AliceBlue"
+             Icon="menu.png">
+    <StackLayout>
+        <Button x:Name="buttonA" Text="EXIST. LRG" TextColor="White" BackgroundColor="#0080FF" FontSize="Medium"></Button>
+        <Button x:Name="buttonB" Text="EXIST. CLT" TextColor="White" BackgroundColor="#0080FF" FontSize="Medium"></Button>
+        <Button x:Name="buttonC" Text="EXIST. Promotires" TextColor="White" BackgroundColor="#0080FF" FontSize="Medium"></Button>
+        <Button x:Name="buttonF" Text="EXIST. Prollan" TextColor="White" BackgroundColor="#0080FF" FontSize="Medium"></Button>
+        <Button x:Name="buttonD" Text="CLAVES" TextColor="White" BackgroundColor="#0080FF" FontSize="Medium"></Button>
+        <Button x:Name="buttonG" Text="COMUNICADOS" TextColor="White" BackgroundColor="#0080FF" FontSize="Medium"></Button>
+        <Button x:Name="buttonH"  Clicked="Bornto"   Text="SALIR" TextColor="White" BackgroundColor="#0080FF" FontSize="Medium"></Button>
+    </StackLayout>
+</ContentPage>
